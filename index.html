@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>建材マート｜仮設ゲート・仮囲い・足場資材の見積もり・販売</title>
+<meta name="description" content="工場・資材置場・工事現場向けの仮設ゲート、仮囲い、足場資材、保安用品を取り扱う建材マート。写真や図面からのお見積りにも対応。法人・大量注文もご相談ください。">
+<link rel="icon" href="data:,">
+<style>
+/******************************/
+/* Reset / base */
+/******************************/
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-width: 375px;
+  font-size: 14px;
+  font-family: "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  line-height: 1.7;
+  color: #000000;
+}
+img { max-width: 100%; vertical-align: top; }
+ul, ol { list-style: none; margin: 0; padding: 0; }
+a { color: #000000; text-decoration: none; transition: all 0.1s ease; }
+a:hover { color: #444444; }
+button { font-family: inherit; cursor: pointer; }
+.u-visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  border: 0; padding: 0;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+}
+.u-container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 1100px;
+  max-width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .u-container { padding: 0 15px; }
+}
+
+/******************************/
+/* Header */
+/******************************/
+.l-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
+}
+.l-header-main__in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 10px 0;
+  gap: 20px;
+}
+.l-header-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+.l-header-logo img {
+  display: block;
+  max-width: 150px;
+  max-height: 42px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.l-header-logo-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.4;
+  min-width: 0;
+}
+.l-header-logo-info__catch {
+  font-size: 13px;
+  font-weight: bold;
+  color: #1f2f4a;
+  white-space: nowrap;
+}
+.l-header-logo-info__tel {
+  font-size: 13px;
+  font-weight: bold;
+  color: #1f2f4a;
+  white-space: nowrap;
+}
+.l-header-logo-info__tel:hover { color: #1f3c88; text-decoration: underline; }
+@media screen and (max-width: 767px) {
+  .l-header-logo-info__catch { display: none; }
+  .l-header-logo-info__tel { font-size: 12px; }
+}
+.l-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.l-header-search__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+}
+.l-header-search__btn img { width: 18px; }
+.l-header-cart {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  background: #f3f7fb;
+}
+.l-header-cart:hover { background: #e9f0f9; color: #000000; }
+.l-header-cart img { width: 17px; }
+.l-header-cart__label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #1f2f4a;
+  white-space: nowrap;
+}
+@media screen and (max-width: 767px) {
+  .l-header-cart__label { display: none; }
+  .l-header-cart { padding: 8px; }
+}
+.l-header-search__box {
+  padding: 14px 0 18px;
+  border-top: 1px solid #e5e5e5;
+}
+.l-header-search__box[hidden] { display: none; }
+.l-header-search__form {
+  display: flex;
+  gap: 8px;
+}
+.l-header-search__form input {
+  flex: 1;
+  box-sizing: border-box;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.l-header-search__form button {
+  padding: 0 20px;
+  border: 0;
+  border-radius: 4px;
+  background: #1f2f4a;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/******************************/
+/* Footer */
+/******************************/
+.l-footer {
+  padding: 60px 0 40px;
+  background: #f7f7f7;
+}
+.l-footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 90px;
+}
+.l-footer-navi { display: flex; flex-wrap: wrap; gap: 40px 90px; }
+.l-footer-navi-list__item { margin-bottom: 10px; font-size: 13px; }
+.l-footer-navi-list__link:hover { text-decoration: underline; }
+@media screen and (max-width: 767px) {
+  .l-footer { padding: 40px 0 30px; }
+  .l-footer-main { display: block; }
+  .l-footer-navi { display: block; margin-top: 10px; }
+}
+</style>
+
+<!-- ここから下はトップページ本文用のスタイル(共通CSSとほぼ同一) -->
+<style>
+.b2b-site {
+  font-family: sans-serif;
+  color: #222;
+  line-height: 1.7;
+}
+
+.b2b-site * {
+  box-sizing: border-box;
+}
+
+.b2b-container,
+.b2b-nav__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.b2b-nav {
+  background: #1f2f4a;
+}
+
+.b2b-nav__inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.b2b-nav a {
+  display: inline-block;
+  padding: 18px 13px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+  border-right: 1px solid rgba(255,255,255,0.12);
+  white-space: nowrap;
+}
+
+.b2b-hero { padding: 54px 0 36px; }
+
+.b2b-hero__inner {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.b2b-hero__lead { margin: 0 0 12px; color: #5a6a85; font-weight: bold; }
+
+.b2b-hero__title {
+  margin: 0 0 18px;
+  font-size: 42px;
+  line-height: 1.35;
+  color: #1f2f4a;
+  font-weight: 800;
+}
+
+.b2b-hero__desc { margin: 0 0 24px; color: #444; font-size: 15px; }
+
+.b2b-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.b2b-btn {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.b2b-btn--primary { background: #1f3c88; color: #fff; }
+.b2b-btn--secondary { background: #f1f1f1; color: #222; }
+
+.b2b-hero__img {
+  min-height: 300px;
+  border-radius: 10px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 44px;
+  letter-spacing: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.b2b-hero__img img { width: 100%; height: 100%; display: block; object-fit: cover; }
+
+.b2b-section { margin: 70px 0; }
+.b2b-section__head { margin-bottom: 26px; }
+.b2b-section__head h2 { margin: 0 0 8px; font-size: 32px; color: #1f2f4a; }
+.b2b-section__head p { margin: 0; color: #666; }
+
+.b2b-grid-3, .b2b-grid-4 { display: grid; gap: 20px; }
+.b2b-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.b2b-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.b2b-card, .b2b-product, .b2b-case, .b2b-news-item {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.b2b-card { padding: 24px; display: block; transition: box-shadow .25s ease, transform .25s ease; }
+.b2b-card:hover { box-shadow: 0 10px 24px rgba(0,0,0,.06); transform: translateY(-2px); }
+
+.b2b-category-card { padding: 0; overflow: hidden; }
+.b2b-category-card__img { width: 100%; height: 180px; overflow: hidden; background: #f7f7f7; border-bottom: 1px solid #e5e5e5; }
+.b2b-category-card__img img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.b2b-category-card__body { padding: 22px 24px 24px; }
+
+.b2b-usage-card { padding: 0; overflow: hidden; }
+.b2b-usage-card__img { width: 100%; height: 145px; overflow: hidden; background: #f7f9fc; border-bottom: 1px solid #e5e5e5; }
+.b2b-usage-card__img img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.b2b-usage-card__body { padding: 20px 24px 24px; }
+
+.b2b-card h3, .b2b-product h3, .b2b-case h3 { margin: 0 0 10px; color: #1f2f4a; }
+.b2b-card p, .b2b-product p, .b2b-case p { margin: 0; color: #666; }
+
+.b2b-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.b2b-flow-item { background: #fff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 24px 20px; }
+.b2b-flow-num {
+  width: 54px; height: 54px; border-radius: 50%;
+  background: #1f3c88; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: bold; margin-bottom: 16px;
+}
+.b2b-flow-item h3 { margin: 0 0 10px; color: #1f2f4a; font-size: 19px; }
+.b2b-flow-item p { margin: 0; color: #666; font-size: 14px; line-height: 1.8; }
+
+.b2b-product a, .b2b-case { display: block; text-decoration: none; color: inherit; }
+.b2b-product img, .b2b-case img { width: 100%; display: block; border-radius: 10px 10px 0 0; }
+.b2b-product img { height: 240px; object-fit: contain; background: #f7f7f7; padding: 10px; }
+.b2b-product h3, .b2b-product p, .b2b-product .price, .b2b-case h3, .b2b-case p { padding-left: 16px; padding-right: 16px; }
+.b2b-product h3, .b2b-case h3 { margin-top: 14px; }
+.b2b-product .price { font-weight: bold; margin-bottom: 18px; color: #222; }
+.b2b-case p { margin-bottom: 18px; }
+
+.b2b-guide-card {
+  position: relative; padding: 24px; border-left: 4px solid #1f3c88;
+  min-height: 210px; display: flex; flex-direction: column;
+}
+.b2b-guide-card__label {
+  display: inline-block; width: fit-content; margin-bottom: 12px;
+  padding: 4px 10px; border-radius: 999px;
+  background: #eef3ff; color: #1f3c88; font-weight: bold; font-size: 12px;
+}
+.b2b-guide-card h3 { margin: 0 0 10px; color: #1f2f4a; font-size: 20px; line-height: 1.45; }
+.b2b-guide-card p { margin: 0 0 16px; color: #666; font-size: 14px; }
+.b2b-guide-card__link { margin-top: auto; color: #1f3c88; font-weight: bold; font-size: 14px; }
+.b2b-guide-card--cta { border-left-color: #d8952b; background: #fffaf0; }
+.b2b-guide-card--cta .b2b-guide-card__label { background: #fff1d6; color: #9a640f; }
+.b2b-guide-cta-wide { display: block; margin-top: 24px; min-height: 0; padding: 28px 32px; }
+.b2b-guide-cta-wide .b2b-guide-card__link { display: inline-block; margin-top: 14px; }
+
+.b2b-cta-wrap {
+  width: 100%; margin: 72px 0;
+  background: #f7f9fc;
+  border-top: 1px solid #dde5f2;
+  border-bottom: 1px solid #dde5f2;
+  padding: 46px 0;
+}
+.b2b-cta { text-align: center; padding: 0 22px; }
+.b2b-cta h2 { margin: 0 0 10px; font-size: 30px; color: #1f2f4a; }
+.b2b-cta p { margin: 0 0 18px; color: #555; }
+
+.b2b-news { display: flex; flex-direction: column; gap: 12px; }
+.b2b-news-item { display: flex; gap: 18px; padding: 16px 18px; }
+.b2b-news-item .date { min-width: 110px; font-weight: bold; color: #666; }
+
+@media (max-width: 1100px) {
+  .b2b-hero__inner { grid-template-columns: 1fr; }
+  .b2b-hero__img { min-height: 240px; font-size: 38px; }
+}
+@media (max-width: 900px) {
+  .b2b-grid-3, .b2b-grid-4, .b2b-flow { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .b2b-container, .b2b-nav__inner { padding-left: 14px; padding-right: 14px; }
+  .b2b-grid-3, .b2b-grid-4, .b2b-flow { grid-template-columns: 1fr; }
+  .b2b-hero { padding: 36px 0 22px; }
+  .b2b-hero__title { font-size: 31px; }
+  .b2b-hero__img { min-height: 190px; font-size: 28px; }
+  .b2b-category-card__img { height: 160px; }
+  .b2b-usage-card__img { height: 150px; }
+  .b2b-nav a { padding: 14px 12px; font-size: 13px; }
+  .b2b-news-item { flex-direction: column; gap: 6px; }
+}
+</style>
+</head>
+<body>
+
+<header class="l-header">
+  <div class="u-container">
+    <div class="l-header-main__in">
+      <div class="l-header-logo">
+        <a href="index.html">
+          <img src="https://img21.shop-pro.jp/PA01522/292/PA01522292.png?cmsp_timestamp=20260804141741" alt="建材マート">
+        </a>
+        <div class="l-header-logo-info">
+          <span class="l-header-logo-info__catch">法人・現場向け建設資材販売　見積相談受付：7:00～18:00／土日祝も受付</span>
+          <a class="l-header-logo-info__tel" href="tel:0359441074">建材マート ☎03-5944-1074</a>
+        </div>
+      </div>
+
+      <div class="l-header-actions">
+        <button type="button" class="l-header-search__btn" id="searchToggleBtn" aria-expanded="false" aria-controls="headerSearchBox">
+          <img src="https://img.shop-pro.jp/tmpl_img/86/icon-search.png" alt="商品を検索する">
+        </button>
+        <a class="l-header-cart" href="https://kenzai-mart.shop-pro.jp/cart/proxy/basket?shop_id=PA01522292&shop_domain=kenzai-mart.shop-pro.jp">
+          <img src="https://img.shop-pro.jp/tmpl_img/86/icon-cart.png" alt="">
+          <span class="l-header-cart__label">見積カート</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="l-header-search__box" id="headerSearchBox" hidden>
+      <form class="l-header-search__form" action="https://kenzai-mart.shop-pro.jp/" method="GET">
+        <label class="u-visually-hidden" for="headerSearchInput">商品検索</label>
+        <input id="headerSearchInput" type="text" name="keyword" placeholder="商品名・キーワードで検索">
+        <button type="submit">検索</button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<div class="b2b-site">
+
+  <nav class="b2b-nav">
+    <div class="b2b-nav__inner">
+      <a href="https://kenzai-mart.shop-pro.jp/?mode=cate&cbid=2985843&csid=0">ゲート・仮囲い</a>
+      <a href="https://kenzai-mart.shop-pro.jp/?mode=cate&cbid=2985844&csid=0">くさび足場</a>
+      <a href="https://kenzai-mart.shop-pro.jp/?mode=cate&cbid=2985845&csid=0">作業台</a>
+      <a href="https://kenzai-mart.shop-pro.jp/?mode=cate&cbid=2985846&csid=0">保安</a>
+      <a href="https://kenzai-mart.shop-pro.jp/?mode=cate&cbid=2985847&csid=0">仮設足場材</a>
+      <a href="https://kenzai-mart.shop-pro.jp/?mode=cate&cbid=2985848&csid=0">その他販売製品</a>
+      <a href="#guide">選び方ガイド</a>
+      <a href="https://kenzai-mart.shop-pro.jp/?mode=f2">見積の流れ</a>
+      <a href="https://kenzai-mart.shop-pro.jp/?mode=f1">会社概要</a>
+      <a href="https://kenzai-mart.shop-pro.jp/?mode=f3">よくある質問</a>
+    </div>
+  </nav>
+
+  <section class="b2b-hero">
+    <div class="b2b-container">
+      <div class="b2b-hero__inner">
+        <div>
+          <p class="b2b-hero__lead">法人・現場向け建設資材販売</p>
+          <h1 class="b2b-hero__title">仮設ゲート・仮囲い・足場資材の見積・販売</h1>
+          <p class="b2b-hero__desc">
+            工場・資材置場・工事現場向けの仮設ゲート、仮囲い、足場資材、保安用品を取り扱っています。<br>
+            写真や図面からのお見積りにも対応。大量注文・法人取引もご相談ください。
+          </p>
+          <div class="b2b-btns">
+            <a href="https://kenzai-mart.shop-pro.jp/?mode=cate&cbid=2985843&csid=0" class="b2b-btn b2b-btn--primary">商品を選んで見積する</a>
+            <a href="https://kenzai-mart.shop-pro.jp/?mode=f6" class="b2b-btn b2b-btn--secondary">仮設ゲートの無料見積を依頼する</a>
+          </div>
+        </div>
+
+        <div class="b2b-hero__img">
+          <img src="https://img21.shop-pro.jp/PA01522/292/etc_base64/TWFpbl9ob21l.png?cmsp_timestamp=20260425193410" alt="仮設ゲート・仮囲い・足場資材">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="b2b-section">
+    <div class="b2b-container">
+      <div class="b2b-section__head">
+        <h2>商品カテゴリー</h2>
+        <p>現場で必要な建設資材をカテゴリ別に探せます。</p>
+      </div>
+
+      <div class="b2b-grid-3">
+        <a href="https://kenzai-mart.shop-pro.jp/?mode=cate&cbid=2985843&csid=0" class="b2b-card b2b-category-card">
+          <div class="b2b-category-card__img">
+            <img src="https://img21.shop-pro.jp/PA01522/292/etc_base64/Y2F0ZWdvcnkx.png?cmsp_timestamp=20260426143724" alt="ゲート・仮囲い">
+          </div>
+          <div class="b2b-category-card__body">
+            <h3>ゲート・仮囲い</h3>
+            <p>仮設ゲート・アコーディオンゲート・フェンス・仮囲い部材</p>
+          </div>
+        </a>
+
+        <a href="https://kenzai-mart.shop-pro.jp/?mode=cate&cbid=2985844&csid=0" class="b2b-card b2b-category-card">
+          <div class="b2b-category-card__img">
+            <img src="https://img21.shop-pro.jp/PA01522/292/etc_base64/Y2F0ZWdvcnky.png?cmsp_timestamp=20260426143724" alt="くさび足場">
+          </div>
+          <div class="b2b-category-card__body">
+            <h3>くさび足場</h3>
+            <p>現場向けの足場資材・関連部品</p>
+          </div>
+        </a>
+
+        <a href="https://kenzai-mart.shop-pro.jp/?mode=cate&cbid=2985845&csid=0" class="b2b-card b2b-category-card">
+          <div class="b2b-category-card__img">
+            <img src="https://img21.shop-pro.jp/PA01522/292/etc_base64/Y2F0ZWdvcnkz.png?cmsp_timestamp=20260426143724" alt="作業台">
+          </div>
+          <div class="b2b-category-card__body">
+            <h3>作業台</h3>
+            <p>高所作業・現場作業に対応した作業台</p>
+          </div>
+        </a>
+
+        <a href="https://kenzai-mart.shop-pro.jp/?mode=cate&cbid=2985846&csid=0" class="b2b-card b2b-category-card">
+          <div class="b2b-category-card__img">
+            <img src="https://img21.shop-pro.jp/PA01522/292/etc_base64/Y2F0ZWdvcnk0.png?cmsp_timestamp=20260426143724" alt="保安">
+          </div>
+          <div class="b2b-category-card__body">
+            <h3>保安</h3>
+            <p>カラーコーン・バリケード・安全用品</p>
+          </div>
+        </a>
+
+        <a href="https://kenzai-mart.shop-pro.jp/?mode=cate&cbid=2985847&csid=0" class="b2b-card b2b-category-card">
+          <div class="b2b-category-card__img">
+            <img src="https://img21.shop-pro.jp/PA01522/292/etc_base64/Y2F0ZWdvcnk1.jpg?cmsp_timestamp=20260426143724" alt="仮設足場材">
+          </div>
+          <div class="b2b-category-card__body">
+            <h3>仮設足場材</h3>
+            <p>単管・クランプ・現場資材など</p>
+          </div>
+        </a>
+
+        <a href="https://kenzai-mart.shop-pro.jp/?mode=cate&cbid=2985848&csid=0" class="b2b-card b2b-category-card">
+          <div class="b2b-category-card__img">
+            <img src="https://img21.shop-pro.jp/PA01522/292/etc_base64/Y2F0ZWdvcnk2.png?cmsp_timestamp=20260426143724" alt="その他販売製品">
+          </div>
+          <div class="b2b-category-card__body">
+            <h3>その他販売製品</h3>
+            <p>周辺部材やオプション製品</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="b2b-section">
+    <div class="b2b-container">
+      <div class="b2b-section__head">
+        <h2>用途から探す</h2>
+        <p>設置場所や用途に応じて商品をお選びいただけます。</p>
+      </div>
+
+      <div class="b2b-grid-3">
+        <a href="https://kenzai-mart.shop-pro.jp/?mode=grp&gid=3175573" class="b2b-card b2b-usage-card">
+          <div class="b2b-usage-card__img">
+            <img src="https://img21.shop-pro.jp/PA01522/292/etc_base64/dXNhZ2Ux.png?cmsp_timestamp=20260426152237" alt="工場向け">
+          </div>
+          <div class="b2b-usage-card__body">
+            <h3>工場向け</h3>
+            <p>出入口管理・区画整理・安全対策</p>
+          </div>
+        </a>
+
+        <a href="https://kenzai-mart.shop-pro.jp/?mode=grp&gid=3175574" class="b2b-card b2b-usage-card">
+          <div class="b2b-usage-card__img">
+            <img src="https://img21.shop-pro.jp/PA01522/292/etc_base64/dXNhZ2Uy.png?cmsp_timestamp=20260426152237" alt="資材置場向け">
+          </div>
+          <div class="b2b-usage-card__body">
+            <h3>資材置場向け</h3>
+            <p>仮囲い・ゲート・防犯用途に対応</p>
+          </div>
+        </a>
+
+        <a href="https://kenzai-mart.shop-pro.jp/?mode=grp&gid=3175575" class="b2b-card b2b-usage-card">
+          <div class="b2b-usage-card__img">
+            <img src="https://img21.shop-pro.jp/PA01522/292/etc_base64/dXNhZ2Uz.png?cmsp_timestamp=20260426152237" alt="工事現場向け">
+          </div>
+          <div class="b2b-usage-card__body">
+            <h3>工事現場向け</h3>
+            <p>仮設設置・安全導線・現場養生</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="b2b-section" id="guide">
+    <div class="b2b-container">
+      <div class="b2b-section__head">
+        <h2>見積前に役立つ選び方ガイド</h2>
+        <p>見積前に迷いやすい資材選定のポイントを、用途別にわかりやすくまとめています。</p>
+      </div>
+
+      <div class="b2b-grid-3">
+        <a href="https://kenzai-mart.shop-pro.jp/?mode=f8" class="b2b-card b2b-guide-card">
+          <span class="b2b-guide-card__label">仮設ゲート</span>
+          <h3>仮設ゲートの選び方</h3>
+          <p>工場・資材置場・工事現場で使う仮設ゲートの種類、サイズ、確認ポイントを解説します。</p>
+          <span class="b2b-guide-card__link">詳しく見る →</span>
+        </a>
+
+        <a href="https://kenzai-mart.shop-pro.jp/?mode=f9" class="b2b-card b2b-guide-card">
+          <span class="b2b-guide-card__label">仮囲い・フェンス</span>
+          <h3>パネルゲートとフェンスの違い</h3>
+          <p>出入口管理、区画整理、防犯対策など、目的に応じた使い分けの考え方を紹介します。</p>
+          <span class="b2b-guide-card__link">詳しく見る →</span>
+        </a>
+
+        <a href="https://kenzai-mart.shop-pro.jp/?mode=f10" class="b2b-card b2b-guide-card">
+          <span class="b2b-guide-card__label">資材置場向け</span>
+          <h3>資材置場に必要な仮囲い・ゲート</h3>
+          <p>資材保管エリアの防犯、車両出入口、敷地境界に必要な資材の選び方をまとめています。</p>
+          <span class="b2b-guide-card__link">詳しく見る →</span>
+        </a>
+      </div>
+
+      <a href="https://kenzai-mart.shop-pro.jp/?mode=f6" class="b2b-card b2b-guide-card b2b-guide-card--cta b2b-guide-cta-wide">
+        <span class="b2b-guide-card__label">無料見積</span>
+        <h3>商品が決まっていない方へ</h3>
+        <p>写真や寸法だけでもご相談可能です。用途や設置場所に合わせて候補商品をご案内します。</p>
+        <span class="b2b-guide-card__link">無料見積を依頼する →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="b2b-section">
+    <div class="b2b-container">
+      <div class="b2b-section__head">
+        <h2>当店の特長</h2>
+        <p>法人・現場向けの運用を意識した対応を行っています。</p>
+      </div>
+
+      <div class="b2b-grid-3">
+        <div class="b2b-card">
+          <h3>写真・図面で見積可能</h3>
+          <p>設置場所の写真や簡単な図面をお送りいただければ、お見積りのご案内が可能です。</p>
+        </div>
+
+        <div class="b2b-card">
+          <h3>法人・大量注文に対応</h3>
+          <p>現場一括納品や継続取引のご相談にも対応しています。</p>
+        </div>
+
+        <div class="b2b-card">
+          <h3>用途に応じた提案</h3>
+          <p>工場、資材置場、建設現場など設置環境に応じてご案内します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="b2b-section" id="flow">
+    <div class="b2b-container">
+      <div class="b2b-section__head">
+        <h2>注文までの流れ</h2>
+        <p>商品選定から見積り、納品までの流れをご確認ください。</p>
+      </div>
+
+      <div class="b2b-flow">
+        <div class="b2b-flow-item">
+          <div class="b2b-flow-num">01</div>
+          <h3>商品を選ぶ</h3>
+          <p>カテゴリ一覧や商品ページから、必要な建設資材をお選びください。</p>
+        </div>
+
+        <div class="b2b-flow-item">
+          <div class="b2b-flow-num">02</div>
+          <h3>見積依頼</h3>
+          <p>数量・納品先・希望内容を入力して、見積依頼フォームから送信してください。</p>
+        </div>
+
+        <div class="b2b-flow-item">
+          <div class="b2b-flow-num">03</div>
+          <h3>内容確認・見積回答</h3>
+          <p>在庫状況・送料・納期を確認し、正式なお見積りをご案内します。</p>
+        </div>
+
+        <div class="b2b-flow-item">
+          <div class="b2b-flow-num">04</div>
+          <h3>ご注文・納品</h3>
+          <p>見積内容に問題なければご注文確定後、商品を手配・納品します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="b2b-section">
+    <div class="b2b-container">
+      <div class="b2b-section__head">
+        <h2>人気商品</h2>
+        <p>よく選ばれている商品をピックアップしています。</p>
+      </div>
+
+      <div class="b2b-grid-4">
+        <div class="b2b-product">
+          <a href="https://kenzai-mart.shop-pro.jp/?pid=191580427">
+            <img src="https://file003.shop-pro.jp/PA01522/292/product/casterGate1350.jpg" alt="キャスターゲート">
+            <h3>キャスターゲート</h3>
+            <p>工場・資材置場向けの定番モデル</p>
+            <p class="price">見積対応</p>
+          </a>
+        </div>
+
+        <div class="b2b-product">
+          <a href="https://kenzai-mart.shop-pro.jp/?pid=191580436">
+            <img src="https://file003.shop-pro.jp/PA01522/292/product/flatpanel01.jpg" alt="フラットパネル">
+            <h3>フラットパネル</h3>
+            <p>仮囲い・区画整理におすすめ</p>
+            <p class="price">見積対応</p>
+          </a>
+        </div>
+
+        <div class="b2b-product">
+          <a href="https://kenzai-mart.shop-pro.jp/?pid=191580572">
+            <img src="https://file003.shop-pro.jp/PA01522/292/product/MightyBase.jpg" alt="マイティーベース">
+            <h3>マイティーベース</h3>
+            <p>仮囲い・安全資材の設置用ベース</p>
+            <p class="price">見積対応</p>
+          </a>
+        </div>
+
+        <div class="b2b-product">
+          <a href="https://kenzai-mart.shop-pro.jp/?pid=191581129">
+            <img src="https://file003.shop-pro.jp/PA01522/292/product/OKmatLBmat.jpg" alt="OKマット・LBマット">
+            <h3>OKマット・LBマット</h3>
+            <p>現場養生・安全導線の基本アイテム</p>
+            <p class="price">見積対応</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="b2b-section">
+    <div class="b2b-container">
+      <div class="b2b-section__head">
+        <h2>施工事例・導入事例</h2>
+        <p>設置イメージや活用例をご紹介しています。</p>
+      </div>
+
+      <div class="b2b-grid-3">
+        <div class="b2b-case">
+          <img src="https://img21.shop-pro.jp/PA01522/292/etc_base64/Y2FzZTE.png?cmsp_timestamp=20260426205101" alt="工場出入口への仮設ゲート設置">
+          <h3>工場出入口への仮設ゲート設置</h3>
+          <p>搬入口の安全管理と区画整理を目的に導入。</p>
+        </div>
+
+        <div class="b2b-case">
+          <img src="https://img21.shop-pro.jp/PA01522/292/etc_base64/Y2FzZTI.png?cmsp_timestamp=20260426205101" alt="資材置場の仮囲い施工">
+          <h3>資材置場の仮囲い施工</h3>
+          <p>資材保管エリアの防犯・区分管理に対応。</p>
+        </div>
+
+        <div class="b2b-case">
+          <img src="https://img21.shop-pro.jp/PA01522/292/etc_base64/Y2FzZTM.png?cmsp_timestamp=20260426205101" alt="工事現場の安全導線整備">
+          <h3>工事現場の安全導線整備</h3>
+          <p>保安用品と仮囲いを組み合わせた事例です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="b2b-cta-wrap">
+    <div class="b2b-container">
+      <div class="b2b-cta">
+        <h2>写真だけでも見積可能です</h2>
+        <p>設置場所の写真や寸法、図面などがあればスムーズです。商品選定が未確定でも、お気軽にお問い合わせください。</p>
+        <div class="b2b-btns" style="justify-content:center;">
+          <a href="https://kenzai-mart.shop-pro.jp/?mode=cate&cbid=2985843&csid=0" class="b2b-btn b2b-btn--primary">商品を選んで見積する</a>
+          <a href="https://kenzai-mart.shop-pro.jp/?mode=f6" class="b2b-btn b2b-btn--secondary">仮設ゲートの無料見積をする</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="b2b-section">
+    <div class="b2b-container">
+      <div class="b2b-section__head">
+        <h2>お知らせ</h2>
+        <p>新商品や営業案内などを掲載します。</p>
+      </div>
+
+      <div class="b2b-news">
+        <div class="b2b-news-item">
+          <span class="date">2026.04.21</span>
+          <span>仮設ゲート関連商品の掲載を開始しました</span>
+        </div>
+
+        <div class="b2b-news-item">
+          <span class="date">2026.04.15</span>
+          <span>現場資材カテゴリを追加しました</span>
+        </div>
+
+        <div class="b2b-news-item">
+          <span class="date">2026.04.10</span>
+          <span>法人様向け大量注文のご相談受付中です</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="l-footer">
+  <div class="u-container">
+    <div class="l-footer-main">
+      <div class="l-footer-navi">
+        <ul class="l-footer-navi-list">
+          <li class="l-footer-navi-list__item"><a class="l-footer-navi-list__link" href="index.html">ホーム</a></li>
+          <li class="l-footer-navi-list__item"><a class="l-footer-navi-list__link" href="https://kenzai-mart.shop-pro.jp/?mode=sk#delivery">配送・送料について</a></li>
+          <li class="l-footer-navi-list__item"><a class="l-footer-navi-list__link" href="https://kenzai-mart.shop-pro.jp/?mode=sk#return">返品について</a></li>
+          <li class="l-footer-navi-list__item"><a class="l-footer-navi-list__link" href="https://kenzai-mart.shop-pro.jp/?mode=sk#payment">支払い方法について</a></li>
+          <li class="l-footer-navi-list__item"><a class="l-footer-navi-list__link" href="https://kenzai-mart.shop-pro.jp/?mode=sk#info">特定商取引法に基づく表記</a></li>
+          <li class="l-footer-navi-list__item"><a class="l-footer-navi-list__link" href="https://kenzai-mart.shop-pro.jp/?mode=privacy">プライバシーポリシー</a></li>
+        </ul>
+
+        <ul class="l-footer-navi-list">
+          <li class="l-footer-navi-list__item"><a class="l-footer-navi-list__link" href="https://kenzai-mart.shop-pro.jp/?mode=f1">会社概要</a></li>
+          <li class="l-footer-navi-list__item"><a class="l-footer-navi-list__link" href="https://kenzai-mart.shop-pro.jp/?mode=f2">見積の流れ</a></li>
+          <li class="l-footer-navi-list__item"><a class="l-footer-navi-list__link" href="https://kenzaimart.com/?mode=f8">選び方ガイド</a></li>
+          <li class="l-footer-navi-list__item"><a class="l-footer-navi-list__link" href="https://kenzai-mart.shop-pro.jp/?mode=f6">仮設専用見積</a></li>
+          <li class="l-footer-navi-list__item"><a class="l-footer-navi-list__link" href="https://kenzai-mart.shop-pro.jp/?mode=f3">よくある質問</a></li>
+          <li class="l-footer-navi-list__item"><a class="l-footer-navi-list__link" href="https://kenzai-mart.shop-pro.jp/?mode=f5">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('searchToggleBtn');
+  var box = document.getElementById('headerSearchBox');
+  if (!btn || !box) return;
+
+  btn.addEventListener('click', function () {
+    var isHidden = box.hasAttribute('hidden');
+    if (isHidden) {
+      box.removeAttribute('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+      document.getElementById('headerSearchInput').focus();
+    } else {
+      box.setAttribute('hidden', '');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
