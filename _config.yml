@@ -1,0 +1,46 @@
+title: "建設資材カタログ | 見積もり専用サイト（仮）"
+description: "仮設足場・ゲート・保安用品など500点以上の建設資材を掲載。気になる商品を選ぶだけで、まとめて見積もり依頼ができます。"
+url: ""
+baseurl: ""
+
+company_name: "◯◯商事株式会社（仮）"
+company_tel: "00-0000-0000"
+company_hours: "平日 9:00〜18:00"
+company_email: "info@example.com"
+
+# 大カテゴリーの表示順とテーマカラー、説明文
+categories_order:
+  - name: "仮設足場材"
+    slug: "kasetsu-ashiba"
+    color: "#1C2B3A"
+    desc: "単管パイプ・クランプ・型枠材・防音パネルなど、仮設足場を組むための基本資材"
+  - name: "くさび足場"
+    slug: "kusabi-ashiba"
+    color: "#2F4A5E"
+    desc: "支柱・踏板・手摺・階段など、くさび緊結式足場一式"
+  - name: "ゲート・仮囲い"
+    slug: "gate-kakoi"
+    color: "#E4571B"
+    desc: "パネルゲート・シートゲート・仮囲いパネルなど、現場の出入口と外周を仕切る資材"
+  - name: "作業台"
+    slug: "sagyodai"
+    color: "#5B6B77"
+    desc: "脚立・梯子・ローリングタワーなど、高所作業を支える作業台"
+  - name: "保安"
+    slug: "hoan"
+    color: "#F2B705"
+    desc: "カラーコーン・バリケード・ガードフェンスなど、現場の安全を確保する保安用品"
+  - name: "その他販売製品"
+    slug: "sonota"
+    color: "#7A6A55"
+    desc: "養生シート・マット・パレットなど、現場で使う消耗品・関連資材"
+
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,47 @@
+---
+layout: default
+title: 商品一覧
+permalink: /products/
+---
+
+<div class="page-header">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="{{ '/' | relative_url }}">ホーム</a> ／ 商品一覧</p>
+    <h1>商品一覧</h1>
+    <p>{{ site.data.products.size }}点の中から、カテゴリーやキーワードで絞り込めます。気になる商品は「見積もりに追加」してください。</p>
+  </div>
+</div>
+
+<section class="product-browser">
+  <div class="wrap">
+    <div class="browser__controls">
+      <input
+        type="search"
+        id="product-search"
+        class="browser__search"
+        placeholder="商品名・型番で検索（例：パネルゲート、カラーコーン、SA-36）"
+        aria-label="商品名・型番で検索"
+      >
+
+      <div class="browser__chips" id="category-chips">
+        <button type="button" class="chip is-active" data-filter="ALL">すべて<span class="chip__count mono">{{ site.data.products.size }}</span></button>
+        {% for cat in site.categories_order %}
+          {% assign items = site.data.products | where: "major", cat.name %}
+          <button type="button" class="chip" data-filter="{{ cat.name }}">{{ cat.name }}<span class="chip__count mono">{{ items.size }}</span></button>
+        {% endfor %}
+      </div>
+    </div>
+
+    <p class="browser__result" id="result-count">{{ site.data.products.size }}件を表示中</p>
+
+    <div class="pick-grid browser__grid" id="product-grid">
+      {% for p in site.data.products %}
+        <div class="browser__item" data-major="{{ p.major }}" data-keyword="{{ p.name | append: ' ' | append: p.model | append: ' ' | append: p.minor | downcase | escape }}">
+          {% include product-plate.html product=p %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <p class="browser__empty" id="empty-state" hidden>該当する商品が見つかりませんでした。キーワードやカテゴリーを変えてお試しください。</p>
+  </div>
+</section>

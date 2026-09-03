@@ -1,0 +1,73 @@
+---
+layout: default
+title: 見積もりリスト
+permalink: /quote/
+---
+
+<div class="page-header">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="{{ '/' | relative_url }}">ホーム</a> ／ 見積もりリスト</p>
+    <h1>見積もりリスト</h1>
+    <p>選んだ商品をまとめて確認し、必要事項を入力のうえ見積もり依頼を送信してください。この時点でご購入・お支払いは発生しません。</p>
+  </div>
+</div>
+
+<section class="quote-section">
+  <div class="wrap quote-layout">
+
+    <div class="quote-list" id="quote-list">
+      <!-- JSでレンダリングされます -->
+    </div>
+
+    <div class="quote-empty" id="quote-empty" hidden>
+      <p>見積もりリストには、まだ商品が追加されていません。</p>
+      <a href="{{ '/products/' | relative_url }}" class="btn btn--primary">商品を探す</a>
+    </div>
+
+    <aside class="quote-form" id="quote-form-wrap" hidden>
+      <h2>見積もり依頼の内容</h2>
+      <p class="quote-form__note">掲載価格をもとにした参考合計です。正式な金額は担当者からの回答をご確認ください。</p>
+
+      <div class="quote-total">
+        <span>参考合計（税込）</span>
+        <span class="quote-total__num mono" id="quote-total">¥0</span>
+      </div>
+
+      <form id="quote-request-form">
+        <div class="form-field">
+          <label for="f-company">会社名 <span class="req">必須</span></label>
+          <input type="text" id="f-company" name="company" required>
+        </div>
+        <div class="form-field">
+          <label for="f-name">ご担当者名 <span class="req">必須</span></label>
+          <input type="text" id="f-name" name="name" required>
+        </div>
+        <div class="form-field">
+          <label for="f-tel">電話番号 <span class="req">必須</span></label>
+          <input type="tel" id="f-tel" name="tel" required>
+        </div>
+        <div class="form-field">
+          <label for="f-email">メールアドレス <span class="req">必須</span></label>
+          <input type="email" id="f-email" name="email" required>
+        </div>
+        <div class="form-field">
+          <label for="f-site">現場名・納品先住所</label>
+          <input type="text" id="f-site" name="site">
+        </div>
+        <div class="form-field">
+          <label for="f-date">希望納期</label>
+          <input type="text" id="f-date" name="date" placeholder="例：2026年10月上旬">
+        </div>
+        <div class="form-field">
+          <label for="f-memo">ご要望・備考</label>
+          <textarea id="f-memo" name="memo" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary quote-form__submit">この内容で見積もりを依頼する</button>
+        <p class="quote-form__fallback">送信すると、入力内容がメールソフトに引き継がれます。うまく開かない場合は
+          <span class="mono">{{ site.company_tel }}</span> または
+          <a href="mailto:{{ site.company_email }}">{{ site.company_email }}</a> まで直接ご連絡ください。</p>
+      </form>
+    </aside>
+  </div>
+</section>

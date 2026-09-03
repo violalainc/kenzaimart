@@ -1,0 +1,28 @@
+{% comment %}
+  使い方: {% include product-plate.html product=product %}
+  product は _data/products.csv の1行(ハッシュ)を渡す
+{% endcomment %}
+<article class="plate" data-product-id="{{ include.product.id }}">
+  <div class="plate__photo">
+    <img src="{{ include.product.image }}" alt="{{ include.product.name | escape }}" loading="lazy">
+  </div>
+  <p class="plate__cat">{{ include.product.major }} ／ {{ include.product.minor }}</p>
+  <h3 class="plate__name">{{ include.product.name }}</h3>
+  <p class="plate__model mono">型番 {{ include.product.model }}</p>
+  <div class="plate__foot">
+    <div class="plate__price mono">
+      ¥{{ include.product.price_fmt }}
+      <small>参考価格・税込</small>
+    </div>
+    <button
+      class="add-btn"
+      type="button"
+      data-add-to-quote
+      data-id="{{ include.product.id }}"
+      data-name="{{ include.product.name | escape }}"
+      data-model="{{ include.product.model | escape }}"
+      data-image="{{ include.product.image }}"
+      data-price="{{ include.product.price }}"
+    >見積もりに追加</button>
+  </div>
+</article>

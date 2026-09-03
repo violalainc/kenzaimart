@@ -1,0 +1,37 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="{{ '/' | relative_url }}" class="brand">
+          <span class="brand__mark" aria-hidden="true"></span>
+          建設資材カタログ
+        </a>
+        <p>仮設足場・ゲート・保安用品など{{ site.data.products.size }}点以上の建設資材を掲載。商品を選んで、まとめて見積もり依頼ができます。</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>サイトについて</h4>
+        <ul>
+          <li><a href="{{ '/products/' | relative_url }}">商品を探す</a></li>
+          <li><a href="{{ '/#flow' | relative_url }}">ご利用の流れ</a></li>
+          <li><a href="{{ '/#categories' | relative_url }}">取扱カテゴリー</a></li>
+          <li><a href="{{ '/quote/' | relative_url }}">見積もりリスト</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>お問い合わせ</h4>
+        <ul>
+          <li class="mono">{{ site.company_tel }}</li>
+          <li>{{ site.company_hours }}</li>
+          <li><a href="mailto:{{ site.company_email }}">{{ site.company_email }}</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; {{ site.time | date: '%Y' }} {{ site.company_name }}</span>
+      <span>掲載価格は参考価格です。正式な金額は見積もり回答時にご案内します。</span>
+    </div>
+  </div>
+</footer>
