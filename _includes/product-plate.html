@@ -2,12 +2,13 @@
   使い方: {% include product-plate.html product=product %}
   product は _data/products.csv の1行(ハッシュ)を渡す
 {% endcomment %}
+{% assign product_url = include.product.id | prepend: '/products/' | append: '/' | relative_url %}
 <article class="plate" data-product-id="{{ include.product.id }}">
-  <div class="plate__photo">
+  <a class="plate__photo" href="{{ product_url }}">
     <img src="{{ include.product.image }}" alt="{{ include.product.name | escape }}" loading="lazy">
-  </div>
+  </a>
   <p class="plate__cat">{{ include.product.major }} ／ {{ include.product.minor }}</p>
-  <h3 class="plate__name">{{ include.product.name }}</h3>
+  <h3 class="plate__name"><a href="{{ product_url }}">{{ include.product.name }}</a></h3>
   <p class="plate__model mono">型番 {{ include.product.model }}</p>
   <div class="plate__foot">
     <div class="plate__price mono">

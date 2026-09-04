@@ -35,6 +35,11 @@ categories_order:
     color: "#7A6A55"
     desc: "養生シート・マット・パレットなど、現場で使う消耗品・関連資材"
 
+collections:
+  products:
+    output: true
+    permalink: /products/:name/
+
 markdown: kramdown
 plugins:
   - jekyll-seo-tag
