@@ -734,5 +734,13 @@ input:focus-visible {
 .page-header h1 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
 .page-header p { color: var(--steel); margin-top: 10px; max-width: 60ch; }
 
-.breadcrumb { font-size: 0.8rem; color: var(--steel); margin-bottom: 14px; }
+.breadcrumb {
+  font-size: 0.8rem;
+  color: var(--steel);
+  margin-bottom: 14px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .breadcrumb a:hover { color: var(--safety-deep); }
