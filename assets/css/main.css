@@ -98,9 +98,9 @@ input:focus-visible {
 
 .brand__mark {
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  background: var(--safety);
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
 }
 
 .brand__sub {
