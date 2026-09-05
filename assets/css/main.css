@@ -183,7 +183,7 @@ input:focus-visible {
    ヒーロー：現物写真をパーツ図のように配置
    ========================================================================== */
 .hero {
-  padding: 64px 0 56px;
+  padding: 28px 0 56px;
   border-bottom: 1px solid var(--line);
 }
 
