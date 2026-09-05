@@ -56,10 +56,13 @@ layout: default
 <div class="page-header">
   <div class="wrap">
     <p class="breadcrumb">
-      <a href="{{ '/' | relative_url }}">ホーム</a> ／
-      <a href="{{ '/products/' | relative_url }}">商品一覧</a> ／
-      <a href="{{ '/products/' | relative_url }}?category={{ page.major | url_encode }}">{{ page.major }}</a> ／
-      {{ page.name }}
+      <span class="breadcrumb__item"><a href="{{ '/' | relative_url }}">ホーム</a></span>
+      <span class="breadcrumb__sep">／</span>
+      <span class="breadcrumb__item"><a href="{{ '/products/' | relative_url }}">商品一覧</a></span>
+      <span class="breadcrumb__sep">／</span>
+      <span class="breadcrumb__item"><a href="{{ '/products/' | relative_url }}?category={{ page.major | url_encode }}">{{ page.major }}</a></span>
+      <span class="breadcrumb__sep">／</span>
+      <span class="breadcrumb__item breadcrumb__item--current">{{ page.name }}</span>
     </p>
   </div>
 </div>

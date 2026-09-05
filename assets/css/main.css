@@ -738,9 +738,23 @@ input:focus-visible {
   font-size: 0.8rem;
   color: var(--steel);
   margin-bottom: 14px;
-  display: block;
-  white-space: nowrap;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 .breadcrumb a:hover { color: var(--safety-deep); }
+
+.breadcrumb__item,
+.breadcrumb__sep {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.breadcrumb__item--current {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
