@@ -1,5 +1,5 @@
 /* ==========================================================================
-   建設資材カタログサイト — デザインシステム
+   建材マートサイト — デザインシステム
    コンセプト：現場の「仕様書・図面」を思わせるカタログ index。
    ・素材色は現場の色（コンクリート紙・鉄骨紺・セーフティオレンジ／イエロー）
    ・寸法や価格などの実数値だけ等幅フォントで扱う（装飾ではなく実データ）
@@ -88,7 +88,7 @@ input:focus-visible {
 
 .brand {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 10px;
   font-family: var(--font-display);
   font-weight: 900;
@@ -97,10 +97,10 @@ input:focus-visible {
   white-space: nowrap;
 }
 
-.brand__mark {
-  display: inline-block;
-  width: 26px;
-  height: 26px;
+.brand__logo {
+  display: block;
+  height: 36px;
+  width: auto;
   object-fit: contain;
 }
 

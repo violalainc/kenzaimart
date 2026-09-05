@@ -1,6 +1,6 @@
 {
-  "name": "建設資材カタログ",
-  "short_name": "建設資材カタログ",
+  "name": "建材マート",
+  "short_name": "建材マート",
   "icons": [
     { "src": "/assets/icons/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "/assets/icons/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
