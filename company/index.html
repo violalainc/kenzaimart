@@ -1,0 +1,83 @@
+---
+layout: default
+title: 会社概要
+permalink: /company/
+---
+<style>
+  /* 会社概要ページ専用スタイル。配色・フォントは既存トークンのみ使用 */
+  .company-section { padding: 48px 0 72px; }
+  .company-table {
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 720px;
+  }
+  .company-table th,
+  .company-table td {
+    text-align: left;
+    padding: 18px 16px;
+    border-top: 1px solid var(--line);
+    vertical-align: top;
+  }
+  .company-table tr:last-child th,
+  .company-table tr:last-child td { border-bottom: 1px solid var(--line); }
+  .company-table th {
+    width: 9.5em;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .company-table td { color: var(--ink-soft); }
+  .company-table td.is-tbd { color: var(--steel); }
+  .company-table a { color: var(--ink); }
+  .company-table a:hover { color: var(--safety-deep); }
+</style>
+
+<div class="page-header">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="{{ '/' | relative_url }}">ホーム</a> ／ 会社概要</p>
+    <h1>会社概要</h1>
+    <p>本サイトを運営する会社の情報です。</p>
+  </div>
+</div>
+
+<section class="company-section">
+  <div class="wrap">
+    <table class="company-table">
+      <tbody>
+        <tr>
+          <th scope="row">商号</th>
+          <td>{{ site.company_name }}</td>
+        </tr>
+        <tr>
+          <th scope="row">所在地</th>
+          <td class="is-tbd">（ご記入ください）</td>
+        </tr>
+        <tr>
+          <th scope="row">設立</th>
+          <td class="is-tbd">（ご記入ください）</td>
+        </tr>
+        <tr>
+          <th scope="row">代表者</th>
+          <td class="is-tbd">（ご記入ください）</td>
+        </tr>
+        <tr>
+          <th scope="row">資本金</th>
+          <td class="is-tbd">（ご記入ください）</td>
+        </tr>
+        <tr>
+          <th scope="row">事業内容</th>
+          <td class="is-tbd">（ご記入ください）</td>
+        </tr>
+        <tr>
+          <th scope="row">電話番号</th>
+          <td class="mono"><a href="tel:{{ site.company_tel | remove: '-' }}">{{ site.company_tel }}</a></td>
+        </tr>
+        <tr>
+          <th scope="row">メールアドレス</th>
+          <td><a href="mailto:{{ site.company_email }}">{{ site.company_email }}</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

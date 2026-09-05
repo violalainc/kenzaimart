@@ -5,7 +5,7 @@
 {% assign product_url = include.product.id | prepend: '/products/' | append: '/' | relative_url %}
 <article class="plate" data-product-id="{{ include.product.id }}">
   <a class="plate__photo" href="{{ product_url }}">
-    <img src="{{ include.product.image }}" alt="{{ include.product.name | escape }}" loading="lazy">
+    <img src="{{ include.product.image | replace: '/upload/', '/upload/f_auto,q_auto,w_500,c_limit/' }}" alt="{{ include.product.name | escape }}" loading="lazy">
   </a>
   <p class="plate__cat">{{ include.product.major }} ／ {{ include.product.minor }}</p>
   <h3 class="plate__name"><a href="{{ product_url }}">{{ include.product.name }}</a></h3>

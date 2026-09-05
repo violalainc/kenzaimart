@@ -65,7 +65,7 @@ permalink: /quote/
 
         <button type="submit" class="btn btn--primary quote-form__submit">この内容で見積もりを依頼する</button>
         <p class="quote-form__fallback">送信すると、入力内容がメールソフトに引き継がれます。うまく開かない場合は
-          <span class="mono">{{ site.company_tel }}</span> または
+          <a class="mono" href="tel:{{ site.company_tel | remove: '-' }}">{{ site.company_tel }}</a> または
           <a href="mailto:{{ site.company_email }}">{{ site.company_email }}</a> まで直接ご連絡ください。</p>
       </form>
     </aside>

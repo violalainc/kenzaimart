@@ -16,13 +16,14 @@
           <li><a href="{{ '/#flow' | relative_url }}">ご利用の流れ</a></li>
           <li><a href="{{ '/#categories' | relative_url }}">取扱カテゴリー</a></li>
           <li><a href="{{ '/quote/' | relative_url }}">見積もりリスト</a></li>
+          <li><a href="{{ '/company/' | relative_url }}">会社概要</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h4>お問い合わせ</h4>
         <ul>
-          <li class="mono">{{ site.company_tel }}</li>
+          <li class="mono"><a href="tel:{{ site.company_tel | remove: '-' }}">{{ site.company_tel }}</a></li>
           <li>{{ site.company_hours }}</li>
           <li><a href="mailto:{{ site.company_email }}">{{ site.company_email }}</a></li>
         </ul>

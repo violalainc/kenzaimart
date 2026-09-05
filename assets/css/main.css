@@ -461,14 +461,53 @@ input:focus-visible {
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 24px;
 }
 
+.feature {
+  position: relative;
+  padding: 26px 24px 30px;
+  border: 1px solid var(--line);
+  transition: border-color 0.15s ease;
+}
+.feature::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 3px;
+  background: transparent;
+  transition: background 0.15s ease;
+}
+.feature:hover { border-color: var(--line-deep); }
+.feature:hover::before { background: var(--safety); }
+
+.feature__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.feature__icon {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  background: var(--white);
+  border: 1px solid var(--line-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+}
+.feature__icon svg { width: 26px; height: 26px; }
+
 .feature__index { font-family: var(--font-mono); color: var(--steel); font-size: 0.8rem; }
-.feature h3 { font-size: 1.05rem; margin: 10px 0 8px; }
+.feature h3 { font-size: 1.05rem; margin: 0 0 8px; }
 .feature p { color: var(--ink-soft); font-size: 0.9rem; margin: 0; }
 
-@media (max-width: 760px) { .feature-grid { grid-template-columns: 1fr; gap: 32px; } }
+@media (max-width: 760px) { .feature-grid { grid-template-columns: 1fr; gap: 20px; } }
 
 /* ==========================================================================
    CTA帯

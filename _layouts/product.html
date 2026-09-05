@@ -68,7 +68,7 @@ layout: default
   <div class="wrap product-detail__grid">
     <div class="product-detail__media">
       <div class="product-detail__photo">
-        <img src="{{ page.image }}" alt="{{ page.name | escape }}">
+        <img src="{{ page.image | replace: '/upload/', '/upload/f_auto,q_auto,w_1000,c_limit/' }}" alt="{{ page.name | escape }}">
       </div>
     </div>
 
