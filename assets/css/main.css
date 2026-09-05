@@ -205,7 +205,6 @@ input:focus-visible {
   font-size: clamp(2rem, 4vw, 2.9rem);
   line-height: 1.4;
   letter-spacing: -0.01em;
-  max-width: 15ch;
 }
 
 .hero__lead {
