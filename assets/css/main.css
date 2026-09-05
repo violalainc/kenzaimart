@@ -732,7 +732,7 @@ input:focus-visible {
    ========================================================================== */
 .page-header { padding: 48px 0 32px; border-bottom: 1px solid var(--line); }
 .page-header h1 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
-.page-header p { color: var(--steel); margin-top: 10px; max-width: 60ch; }
+.page-header p:not(.breadcrumb) { color: var(--steel); margin-top: 10px; max-width: 60ch; }
 
 .breadcrumb {
   font-size: 0.8rem;
