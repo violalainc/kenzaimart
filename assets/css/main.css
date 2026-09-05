@@ -99,12 +99,10 @@ input:focus-visible {
 
 .brand__logo {
   display: block;
+  height: 48px;
   width: auto;
   object-fit: contain;
 }
-
-.site-header .brand__logo { height: 96px; }
-.footer-brand .brand__logo { height: 48px; }
 
 .brand__sub {
   font-size: 0.62rem;
@@ -182,7 +180,6 @@ input:focus-visible {
   .site-nav a { width: 100%; padding: 14px 24px; border-bottom: 1px solid var(--line); }
   .site-nav a:hover { border-bottom-color: var(--line); }
   .nav-toggle { display: flex; }
-  .site-header .brand__logo { height: 32px; }
 }
 
 @media (max-width: 480px) {
