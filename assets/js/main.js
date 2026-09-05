@@ -220,23 +220,12 @@
     });
 
     var form = document.getElementById("quote-request-form");
-    if (form) {
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+    var itemsField = document.getElementById("quote-items-field");
+    if (form && itemsField) {
+      form.addEventListener("submit", function () {
         var items = getQuoteItems();
-        var data = new FormData(form);
 
         var lines = [];
-        lines.push("【会社名】" + data.get("company"));
-        lines.push("【ご担当者名】" + data.get("name"));
-        lines.push("【電話番号】" + data.get("tel"));
-        lines.push("【メールアドレス】" + data.get("email"));
-        lines.push("【現場名・納品先住所】" + (data.get("site") || "未記入"));
-        lines.push("【希望納期】" + (data.get("date") || "未記入"));
-        lines.push("【ご要望・備考】" + (data.get("memo") || "なし"));
-        lines.push("");
-        lines.push("【見積もり依頼商品】");
-
         var total = 0;
         items.forEach(function (item) {
           var lineTotal = item.price * (item.qty || 1);
@@ -249,11 +238,7 @@
         lines.push("");
         lines.push("参考合計（税込）：" + yen(total));
 
-        var subject = encodeURIComponent("【見積もり依頼】" + data.get("company"));
-        var body = encodeURIComponent(lines.join("\n"));
-        var toAddress = (window.SITE && window.SITE.companyEmail) || "";
-
-        window.location.href = "mailto:" + toAddress + "?subject=" + subject + "&body=" + body;
+        itemsField.value = lines.join("\n");
       });
     }
 

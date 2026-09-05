@@ -33,7 +33,8 @@ permalink: /quote/
         <span class="quote-total__num mono" id="quote-total">¥0</span>
       </div>
 
-      <form id="quote-request-form">
+      <form id="quote-request-form" action="https://formspree.io/f/mvzbpkrz" method="POST">
+        <input type="hidden" id="quote-items-field" name="見積もり商品リスト" value="">
         <div class="form-field">
           <label for="f-company">会社名 <span class="req">必須</span></label>
           <input type="text" id="f-company" name="company" required>
@@ -64,7 +65,7 @@ permalink: /quote/
         </div>
 
         <button type="submit" class="btn btn--primary quote-form__submit">この内容で見積もりを依頼する</button>
-        <p class="quote-form__fallback">送信すると、入力内容がメールソフトに引き継がれます。うまく開かない場合は
+        <p class="quote-form__fallback">このまま送信すると、担当者に見積もり依頼が届きます。うまく送信できない場合は
           <a class="mono" href="tel:{{ site.company_tel | remove: '-' }}">{{ site.company_tel }}</a> または
           <a href="mailto:{{ site.company_email }}">{{ site.company_email }}</a> まで直接ご連絡ください。</p>
       </form>
