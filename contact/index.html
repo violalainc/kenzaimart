@@ -1,0 +1,43 @@
+---
+layout: default
+title: お問い合わせ
+permalink: /contact/
+---
+
+<div class="page-header">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="{{ '/' | relative_url }}">ホーム</a> ／ お問い合わせ</p>
+    <h1>お問い合わせ</h1>
+    <p>商品や見積もりについてのご質問、その他お問い合わせはこちらからお送りください。</p>
+  </div>
+</div>
+
+<section class="contact-section">
+  <div class="wrap">
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <!-- TODO: YOUR_FORM_ID をFormspreeで発行された実際のフォームIDに差し替えること -->
+      <div class="form-field">
+        <label for="c-company">会社名</label>
+        <input type="text" id="c-company" name="company">
+      </div>
+      <div class="form-field">
+        <label for="c-name">お名前 <span class="req">必須</span></label>
+        <input type="text" id="c-name" name="name" required>
+      </div>
+      <div class="form-field">
+        <label for="c-tel">電話番号</label>
+        <input type="tel" id="c-tel" name="tel">
+      </div>
+      <div class="form-field">
+        <label for="c-email">メールアドレス <span class="req">必須</span></label>
+        <input type="email" id="c-email" name="email" required>
+      </div>
+      <div class="form-field">
+        <label for="c-message">お問い合わせ内容 <span class="req">必須</span></label>
+        <textarea id="c-message" name="message" rows="6" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn--primary quote-form__submit">送信する</button>
+    </form>
+  </div>
+</section>
