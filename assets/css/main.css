@@ -77,6 +77,45 @@ input:focus-visible {
   border-bottom: 1px solid var(--line);
 }
 
+.announce-bar {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.75rem;
+  padding: 7px 0;
+}
+.announce-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.announce-bar__tagline { font-weight: 500; }
+.announce-bar__contact {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+.announce-bar__hours { color: #A9B2BC; }
+.announce-bar__tel {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--paper);
+}
+.announce-bar__tel:hover { color: var(--safety); }
+
+@media (max-width: 760px) {
+  .announce-bar__hours { display: none; }
+  .announce-bar__tagline {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.7rem;
+  }
+}
+
 .site-header__bar {
   display: flex;
   align-items: center;

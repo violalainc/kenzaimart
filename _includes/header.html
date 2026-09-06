@@ -1,4 +1,13 @@
 <header class="site-header">
+  <div class="announce-bar">
+    <div class="wrap announce-bar__inner">
+      <span class="announce-bar__tagline">{{ site.header_tagline }}</span>
+      <span class="announce-bar__contact">
+        <span class="announce-bar__hours">{{ site.company_hours }}</span>
+        <a class="announce-bar__tel" href="tel:{{ site.company_tel | remove: '-' }}">{{ site.company_tel }}</a>
+      </span>
+    </div>
+  </div>
   <div class="wrap site-header__bar">
     <a href="{{ '/' | relative_url }}" class="brand">
       <img class="brand__logo" src="{{ '/assets/kenzaimart-logo.png' | relative_url }}" alt="建材マート">
