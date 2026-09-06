@@ -1,0 +1,114 @@
+---
+layout: default
+title: 特定商取引法に基づく表記
+permalink: /tokushoho/
+---
+<style>
+  /* 特定商取引法に基づく表記ページ専用スタイル。配色・フォントは既存トークンのみ使用 */
+  .legal-section { padding: 48px 0 72px; }
+  .legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 780px;
+  }
+  .legal-table th,
+  .legal-table td {
+    text-align: left;
+    padding: 18px 16px;
+    border-top: 1px solid var(--line);
+    vertical-align: top;
+  }
+  .legal-table tr:last-child th,
+  .legal-table tr:last-child td { border-bottom: 1px solid var(--line); }
+  .legal-table th {
+    width: 11em;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .legal-table td { color: var(--ink-soft); }
+  .legal-table td.is-tbd { color: var(--steel); }
+  .legal-table a { color: var(--ink); }
+  .legal-table a:hover { color: var(--safety-deep); }
+  @media (max-width: 640px) {
+    .legal-table, .legal-table tbody, .legal-table tr, .legal-table th, .legal-table td {
+      display: block;
+      width: auto;
+    }
+    .legal-table tr { padding: 16px 0; border-top: 1px solid var(--line); }
+    .legal-table tr:last-child { border-bottom: 1px solid var(--line); }
+    .legal-table th,
+    .legal-table td { padding: 0; border-top: none; white-space: normal; }
+    .legal-table th { margin-bottom: 6px; }
+  }
+</style>
+
+<div class="page-header">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="{{ '/' | relative_url }}">ホーム</a> ／ 特定商取引法に基づく表記</p>
+    <h1>特定商取引法に基づく表記</h1>
+    <p>このサイトは商品の販売価格は参考価格であり、実際の取引条件は見積もり回答時にご案内するものですが、ご参考として表記いたします。</p>
+  </div>
+</div>
+
+<section class="legal-section">
+  <div class="wrap">
+    <table class="legal-table">
+      <tbody>
+        <tr>
+          <th scope="row">販売事業者</th>
+          <td>{{ site.company_name }}</td>
+        </tr>
+        <tr>
+          <th scope="row">運営統括責任者</th>
+          <td>細谷 雄介</td>
+        </tr>
+        <tr>
+          <th scope="row">所在地</th>
+          <td>東京都板橋区中板橋8番2号</td>
+        </tr>
+        <tr>
+          <th scope="row">電話番号</th>
+          <td class="mono"><a href="tel:{{ site.company_tel | remove: '-' }}">{{ site.company_tel }}</a></td>
+        </tr>
+        <tr>
+          <th scope="row">メールアドレス</th>
+          <td><a href="mailto:{{ site.company_email }}">{{ site.company_email }}</a></td>
+        </tr>
+        <tr>
+          <th scope="row">ホームページURL</th>
+          <td><a href="https://kenzaimart.com" target="_blank" rel="noopener noreferrer">https://kenzaimart.com</a></td>
+        </tr>
+        <tr>
+          <th scope="row">商品の販売価格</th>
+          <td>掲載価格は参考価格です。数量・納期・現場条件等により変動するため、最終的な価格は見積もり回答時にご案内します。</td>
+        </tr>
+        <tr>
+          <th scope="row">商品代金以外の必要料金</th>
+          <td class="is-tbd">（ご記入ください。例: 送料・設置費等が別途発生する場合はその旨）</td>
+        </tr>
+        <tr>
+          <th scope="row">お支払い方法</th>
+          <td class="is-tbd">（ご記入ください）</td>
+        </tr>
+        <tr>
+          <th scope="row">お支払い時期</th>
+          <td class="is-tbd">（ご記入ください）</td>
+        </tr>
+        <tr>
+          <th scope="row">商品の引渡時期</th>
+          <td class="is-tbd">（ご記入ください。例: 見積もり合意後、別途ご案内する納期による）</td>
+        </tr>
+        <tr>
+          <th scope="row">返品・交換について</th>
+          <td class="is-tbd">（ご記入ください）</td>
+        </tr>
+        <tr>
+          <th scope="row">動作環境</th>
+          <td>該当なし</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
