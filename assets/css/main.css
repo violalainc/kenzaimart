@@ -107,13 +107,7 @@ input:focus-visible {
 .announce-bar__tel:hover { color: var(--safety); }
 
 @media (max-width: 760px) {
-  .announce-bar__hours { display: none; }
-  .announce-bar__tagline {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 0.7rem;
-  }
+  .announce-bar { display: none; }
 }
 
 .site-header__bar {
