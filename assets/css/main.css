@@ -680,6 +680,7 @@ input:focus-visible {
   align-items: center;
   gap: 18px;
 }
+.quote-empty[hidden] { display: none; }
 
 .quote-form {
   background: var(--white);
@@ -725,6 +726,70 @@ input:focus-visible {
   .quote-layout { grid-template-columns: 1fr; }
   .quote-form { position: static; }
 }
+
+/* ==========================================================================
+   見積もり追加ポップアップ
+   ========================================================================== */
+.quote-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.quote-modal[hidden] { display: none; }
+
+.quote-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 43, 58, 0.55);
+}
+
+.quote-modal__box {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  background: var(--white);
+  border: 1px solid var(--line-deep);
+  padding: 32px 28px 28px;
+  text-align: center;
+}
+
+.quote-modal__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--steel);
+  cursor: pointer;
+}
+.quote-modal__close:hover { color: var(--ink); }
+
+.quote-modal__eyebrow { font-size: 0.76rem; font-weight: 700; color: var(--safety-deep); margin-bottom: 18px; }
+
+.quote-modal__product { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-bottom: 26px; }
+.quote-modal__photo {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 8px;
+}
+.quote-modal__name { font-weight: 700; font-size: 0.92rem; line-height: 1.5; color: var(--ink); }
+
+.quote-modal__actions { display: flex; flex-direction: column; gap: 10px; }
+.quote-modal__actions .btn { width: 100%; justify-content: center; }
 
 /* ==========================================================================
    お問い合わせページ

@@ -65,7 +65,7 @@
     });
   }
 
-  function initAddToQuoteButtons() {
+  function initAddToQuoteButtons(quoteModal) {
     document.addEventListener("click", function (e) {
       var btn = e.target.closest("[data-add-to-quote]");
       if (!btn) return;
@@ -73,23 +73,63 @@
       var id = String(btn.dataset.id);
       var items = getQuoteItems();
       var idx = items.findIndex(function (it) { return String(it.id) === id; });
+      var addedItem = null;
 
       if (idx === -1) {
-        items.push({
+        addedItem = {
           id: id,
           name: btn.dataset.name,
           model: btn.dataset.model,
           image: btn.dataset.image,
           price: Number(btn.dataset.price) || 0,
           qty: 1
-        });
+        };
+        items.push(addedItem);
       } else {
         items.splice(idx, 1);
       }
 
       saveQuoteItems(items);
       markAddedButtons();
+
+      if (addedItem && quoteModal) {
+        quoteModal.open(addedItem);
+      }
     });
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* 「見積もりに追加しました」ポップアップ                                */
+  /* ------------------------------------------------------------------ */
+  function initQuoteAddedModal() {
+    var modal = document.getElementById("quote-added-modal");
+    if (!modal) return null;
+
+    var photoEl = document.getElementById("quote-modal-photo");
+    var nameEl = document.getElementById("quote-modal-name");
+
+    function open(item) {
+      if (photoEl) {
+        photoEl.src = item.image || "";
+        photoEl.alt = item.name || "";
+      }
+      if (nameEl) nameEl.textContent = item.name || "";
+      modal.hidden = false;
+    }
+
+    function close() {
+      modal.hidden = true;
+    }
+
+    modal.querySelectorAll("[data-modal-close]").forEach(function (el) {
+      el.addEventListener("click", close);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !modal.hidden) close();
+    });
+
+    return { open: open, close: close };
   }
 
   /* ------------------------------------------------------------------ */
@@ -250,7 +290,8 @@
   /* ------------------------------------------------------------------ */
   document.addEventListener("DOMContentLoaded", function () {
     initNavToggle();
-    initAddToQuoteButtons();
+    var quoteModal = initQuoteAddedModal();
+    initAddToQuoteButtons(quoteModal);
     markAddedButtons();
     updateHeaderCount();
     initProductBrowser();

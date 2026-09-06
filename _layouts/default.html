@@ -23,6 +23,22 @@
 
   {% include footer.html %}
 
+  <div class="quote-modal" id="quote-added-modal" hidden>
+    <div class="quote-modal__overlay" data-modal-close></div>
+    <div class="quote-modal__box" role="dialog" aria-modal="true" aria-labelledby="quote-modal-name">
+      <button type="button" class="quote-modal__close" data-modal-close aria-label="閉じる">&times;</button>
+      <p class="quote-modal__eyebrow">見積もりリストに追加しました</p>
+      <div class="quote-modal__product">
+        <img class="quote-modal__photo" id="quote-modal-photo" src="" alt="">
+        <p class="quote-modal__name" id="quote-modal-name"></p>
+      </div>
+      <div class="quote-modal__actions">
+        <button type="button" class="btn btn--ghost" data-modal-close>商品を探す</button>
+        <a class="btn btn--primary" href="{{ '/quote/' | relative_url }}">見積もりをする</a>
+      </div>
+    </div>
+  </div>
+
   <script>
     window.SITE = {
       baseurl: "{{ site.baseurl }}",
