@@ -107,7 +107,16 @@ input:focus-visible {
 .announce-bar__tel:hover { color: var(--safety); }
 
 @media (max-width: 760px) {
-  .announce-bar { display: none; }
+  .announce-bar { font-size: 0.68rem; }
+  .announce-bar__inner { flex-wrap: nowrap; }
+  .announce-bar__hours { display: none; }
+  .announce-bar__tagline {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+  .announce-bar__tel { flex-shrink: 0; }
 }
 
 .site-header__bar {
