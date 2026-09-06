@@ -101,10 +101,11 @@ input:focus-visible {
   font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   color: var(--paper);
 }
 .announce-bar__tel:hover { color: var(--safety); }
+.announce-bar__tel-icon { color: var(--safety); flex-shrink: 0; }
 
 @media (max-width: 760px) {
   .announce-bar { font-size: 0.68rem; }
