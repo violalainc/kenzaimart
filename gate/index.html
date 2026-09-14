@@ -1,0 +1,272 @@
+---
+layout: default
+title: 仮設ゲート
+description: "建設現場の仮設ゲート・仮囲いを96点以上掲載。既製サイズはもちろん、幅・高さのオーダーメイドにも対応。見積もりは無料・会員登録不要です。"
+permalink: /kasetsu-gate/
+---
+
+<style>
+  /* 仮設ゲート専用ページ固有のスタイル。配色・フォントは既存トークンのみ使用 */
+  .gate-callout {
+    background: var(--white);
+    border: 1px solid var(--line-deep);
+    border-left: 6px solid var(--safety);
+    padding: 28px 32px;
+    margin-top: 32px;
+  }
+  .gate-callout h2 { font-size: 1.05rem; color: var(--safety-deep); margin-bottom: 8px; }
+  .gate-callout p { color: var(--ink-soft); margin: 0; max-width: 68ch; }
+
+  .gate-lineup__group { margin-top: 48px; }
+  .gate-lineup__group:first-child { margin-top: 0; }
+  .gate-lineup__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .gate-lineup__head h3 { font-size: 1.05rem; }
+  .gate-lineup__head span { font-family: var(--font-mono); color: var(--steel); font-size: 0.8rem; white-space: nowrap; }
+</style>
+
+{% assign gate_major = "ゲート・仮囲い" %}
+{% assign gate_products = site.data.products | where: "major", gate_major %}
+{% assign gate_count = gate_products | size %}
+{% assign gate_types = gate_products | group_by: "minor" %}
+
+{% comment %}
+  開口幅・重量の範囲は、実際に「開口幅」の概念を持つゲート本体（minor名に「ゲート」を含む商品＝
+  パネルゲート・シートゲート・パネルキャスターゲート・キャスターゲート）の商品名から動的に算出する。
+  仮囲いパネルやドア・部材類（仮囲い・ドア／防音アフィラウォール）は幅の意味が異なる（パネル幅など）ため対象外とし、
+  誤解を招く数値を出さないようにする。名称からmm/kgが抽出できない商品はスキップし、抽出できた範囲のみ表示する。
+{% endcomment %}
+{% assign gate_type_items = gate_products | where_exp: "p", "p.minor contains 'ゲート'" %}
+{% assign min_width = 999999 %}
+{% assign max_width = 0 %}
+{% assign min_weight = 999999 %}
+{% assign max_weight = 0 %}
+{% assign width_found = false %}
+{% assign weight_found = false %}
+{% for p in gate_type_items %}
+  {% assign gs = p.name | replace: "Ｗ", "W" | replace: "ｍｍ", "mm" | replace: "Kg", "kg" %}
+  {% if gs contains "W" %}
+    {% assign gs_after_w = gs | split: "W" | last %}
+    {% if gs_after_w contains "mm" %}
+      {% assign gs_width_str = gs_after_w | split: "mm" | first %}
+      {% assign gs_width = gs_width_str | plus: 0 %}
+      {% if gs_width > 0 %}
+        {% assign width_found = true %}
+        {% if gs_width < min_width %}{% assign min_width = gs_width %}{% endif %}
+        {% if gs_width > max_width %}{% assign max_width = gs_width %}{% endif %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+  {% if gs contains "・" %}
+    {% assign gs_after_dot = gs | split: "・" | last %}
+    {% if gs_after_dot contains "kg" %}
+      {% assign gs_weight_str = gs_after_dot | split: "kg" | first %}
+      {% assign gs_weight = gs_weight_str | plus: 0 %}
+      {% if gs_weight > 0 %}
+        {% assign weight_found = true %}
+        {% if gs_weight < min_weight %}{% assign min_weight = gs_weight %}{% endif %}
+        {% if gs_weight > max_weight %}{% assign max_weight = gs_weight %}{% endif %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+<div class="page-header">
+  <div class="wrap">
+    <p class="breadcrumb">
+      <span class="breadcrumb__item"><a href="{{ '/' | relative_url }}">ホーム</a></span>
+      <span class="breadcrumb__sep">／</span>
+      <span class="breadcrumb__item breadcrumb__item--current">仮設ゲート</span>
+    </p>
+    <h1>仮設ゲート</h1>
+    <p>
+      建設現場の出入口や敷地の外周を仕切る仮設ゲート・仮囲いを、パネルゲート・シートゲートなど
+      <span class="mono">{{ gate_count }}</span>点以上の中からお選びいただけます。
+      既製サイズはもちろん、現場に合わせたオーダーメイドにも対応します。
+    </p>
+
+    <div class="gate-callout">
+      <h2>オーダーメイド対応</h2>
+      <p>幅・高さなど、現場に合わせたサイズオーダーが可能です。納期は見積もり時に個別にご案内します。</p>
+    </div>
+  </div>
+</div>
+
+<section class="features">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>仮設ゲートとは</h2>
+      <p>
+        仮設ゲートは、建設工事期間中に現場の出入口や敷地境界に設置する仮設の門扉・仕切りです。
+        第三者の立入防止、盗難やいたずらの防止、粉じん・騒音の飛散防止など、現場の安全管理に欠かせない資材です。
+        工期や現場の状況に応じて、さまざまな仕様の中から選ぶことができます。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>主な種類</h2>
+      <p>用途や工期に合わせて、いくつかのタイプからお選びいただけます。</p>
+    </div>
+
+    <div class="feature-grid">
+      {% for type in gate_types %}
+        <div class="feature">
+          <span class="feature__index mono">{{ type.items.size }}点</span>
+          <h3>{{ type.name }}</h3>
+          <p>
+            {% case type.name %}
+              {% when "パネルゲート" %}硬質な金属パネルを使用した、耐久性の高いゲートです。柱付き・柱無しタイプがあり、長期間の工事現場に向いています。
+              {% when "シートゲート" %}軽量なシート素材を使用したゲートです。パネルゲートに比べて設置・撤去がしやすいのが特徴です。
+              {% when "パネルキャスターゲート" %}キャスターを備えたパネルタイプのゲートです。人力で開閉・移動がしやすく、開口位置を現場の状況に合わせて変えたい場合に向いています。
+              {% when "キャスターゲート" %}キャスターを備えた軽量なゲートです。手軽に開閉・移動ができ、小規模な現場や一時的な仕切りに向いています。
+              {% when "仮囲い・ドア" %}敷地境界を仕切るパネルやドア、コーナー・調整用の部材などを組み合わせて構成する仮囲い一式です。
+              {% when "防音アフィラウォール" %}工事に伴う騒音の飛散を抑える防音パネルを組み合わせた仮囲いです。
+              {% else %}{{ type.name }}に関する資材です。詳しくは商品ラインナップをご確認ください。
+            {% endcase %}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>選び方のポイント</h2>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <span class="feature__index mono">01</span>
+        <h3>開口幅で選ぶ</h3>
+        <p>
+          {% if width_found %}
+            既製品は<span class="mono">{{ min_width }}mm〜{{ max_width }}mm</span>まで展開。それ以外はオーダーメイドで対応。
+          {% else %}
+            既製品には幅の異なる複数のサイズをご用意しています。ご希望のサイズがない場合はオーダーメイドで対応します。
+          {% endif %}
+        </p>
+      </div>
+      <div class="feature">
+        <span class="feature__index mono">02</span>
+        <h3>設置期間で選ぶ</h3>
+        <p>長期現場は耐久性重視のパネルゲート、短期・仮設中心ならシートゲートが目安。</p>
+      </div>
+      <div class="feature">
+        <span class="feature__index mono">03</span>
+        <h3>重量で選ぶ</h3>
+        <p>
+          {% if weight_found %}
+            <span class="mono">{{ min_weight }}kg〜{{ max_weight }}kg</span>まで、規模に応じた重量帯から選択可能。
+          {% else %}
+            現場の規模に応じて、重量帯の異なる商品から選択いただけます。
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>よくあるご利用シーン</h2>
+      <p>仮設ゲートは、現場の種類や工期に応じてさまざまな場面でご利用いただいています。</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <span class="feature__index mono">01</span>
+        <h3>マンション・ビルなどの新築工事</h3>
+        <p>工期が長期にわたるため、耐久性の高いパネルゲートが選ばれる傾向にあります。</p>
+      </div>
+      <div class="feature">
+        <span class="feature__index mono">02</span>
+        <h3>商業施設・店舗の改修工事</h3>
+        <p>営業を続けながらの工事となるケースが多く、設置・撤去のしやすいシートゲートが好まれます。</p>
+      </div>
+      <div class="feature">
+        <span class="feature__index mono">03</span>
+        <h3>戸建て・小規模現場</h3>
+        <p>開口幅が比較的小さいサイズが中心ですが、敷地形状に合わせたオーダーメイドのご相談も多くいただきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="picks">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>商品ラインナップ</h2>
+      <p>種類ごとに商品をご紹介します。</p>
+    </div>
+
+    {% for type in gate_types %}
+      <div class="gate-lineup__group">
+        <div class="gate-lineup__head">
+          <h3>{{ type.name }}</h3>
+          <span>{{ type.items.size }}点</span>
+        </div>
+        <div class="pick-grid">
+          {% assign type_picks = type.items | slice: 0, 4 %}
+          {% for p in type_picks %}
+            {% include product-plate.html product=p %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+
+    <div class="picks__more">
+      <a href="{{ '/products/' | relative_url }}?category={{ gate_major | url_encode }}" class="btn btn--primary">すべてのゲート・仮囲いを見る</a>
+    </div>
+  </div>
+</section>
+
+<section class="flow" id="flow">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>ご利用の流れ</h2>
+      <p>会員登録は不要です。3ステップで見積もり依頼まで完了します。</p>
+    </div>
+
+    <div class="flow__steps">
+      <div class="flow__step">
+        <span class="flow__num mono">01</span>
+        <h3>商品を探す</h3>
+        <p>カテゴリーから絞り込むか、商品名・型番でキーワード検索して、必要な資材を見つけます。</p>
+      </div>
+      <div class="flow__step">
+        <span class="flow__num mono">02</span>
+        <h3>見積もりリストに追加</h3>
+        <p>気になる商品の「見積もりに追加」を押すだけ。数量はあとからまとめて調整できます。</p>
+      </div>
+      <div class="flow__step">
+        <span class="flow__num mono">03</span>
+        <h3>まとめて見積もり依頼</h3>
+        <p>現場情報・希望納期を添えて送信。担当者が内容を確認し、正式な見積もりをご案内します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band__inner">
+    <div>
+      <h2>オーダーメイドのご相談も承ります。</h2>
+      <p>既製品{{ gate_count }}点以上に加え、サイズオーダーにも対応しています。</p>
+    </div>
+    <a href="{{ '/products/' | relative_url }}?category={{ gate_major | url_encode }}" class="btn btn--primary">見積もりを依頼する</a>
+  </div>
+</section>
