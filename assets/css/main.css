@@ -479,13 +479,18 @@ input:focus-visible {
 .plate__price small { font-family: var(--font-body); font-weight: 400; font-size: 0.68rem; color: var(--steel); display: block; }
 
 .plate__price--inquiry {
+  flex: 1 1 auto;
+  min-width: 0;
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
   color: var(--safety-deep);
 }
 
 .add-btn {
+  flex: none;
+  margin-left: auto;
   font-family: var(--font-body);
   font-size: 0.78rem;
   font-weight: 700;
