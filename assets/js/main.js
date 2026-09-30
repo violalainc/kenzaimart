@@ -194,7 +194,7 @@
     row.className = "quote-row";
     row.dataset.id = item.id;
     var priceHtml = item.inquiry
-      ? '<span class="quote-row__price quote-row__price--inquiry">ご案内</span>'
+      ? '<span class="quote-row__price quote-row__price--inquiry">要見積もり</span>'
       : '<span class="quote-row__price mono">' + yen(item.price * (item.qty || 1)) + '</span>';
     row.innerHTML =
       '<span class="quote-row__photo"><img src="' + item.image + '" alt=""></span>' +
@@ -284,7 +284,7 @@
             hasInquiry = true;
             lines.push(
               "・" + item.name + "（型番:" + item.model + "） 数量" + (item.qty || 1) +
-              " 参考価格ご案内 小計ご案内"
+              " 参考価格要見積もり 小計要見積もり"
             );
           } else {
             var lineTotal = item.price * (item.qty || 1);
@@ -298,7 +298,7 @@
         lines.push("");
         lines.push("参考合計（税込）：" + yen(total));
         if (hasInquiry) {
-          lines.push("※価格ご案内の商品は合計に含まれておらず、担当者より別途ご案内します");
+          lines.push("※「要見積もり」の商品は価格が確定しておらず、上記合計に含まれておりません。担当者より別途お見積もりいたします。");
         }
 
         itemsField.value = lines.join("\n");
