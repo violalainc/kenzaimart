@@ -12,7 +12,7 @@
   <p class="plate__model mono">型番 {{ include.product.model }}</p>
   <div class="plate__foot">
     {% if include.product.price == "2000" %}
-    <div class="plate__price plate__price--inquiry">価格はお見積もり時にご案内</div>
+    <div class="plate__price plate__price--inquiry">要見積もり</div>
     {% else %}
     <div class="plate__price mono">
       ¥{{ include.product.price_fmt }}
