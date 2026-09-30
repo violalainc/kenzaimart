@@ -39,6 +39,10 @@ layout: default
     display: block;
     margin-top: 2px;
   }
+  .product-detail__price--inquiry {
+    font-size: 1.05rem;
+    color: var(--safety-deep);
+  }
   .product-detail__add { width: 100%; justify-content: center; }
   .product-detail__add.is-added { background: var(--ink); border-color: var(--ink); color: var(--white); }
   .product-detail__docs { margin-top: 28px; }
@@ -80,10 +84,14 @@ layout: default
       <h1 class="product-detail__name">{{ page.name }}</h1>
       <p class="product-detail__model mono">型番 {{ page.model }}</p>
 
+      {% if page.price == "2000" %}
+      <div class="product-detail__price product-detail__price--inquiry">価格はお見積もり時にご案内</div>
+      {% else %}
       <div class="product-detail__price mono">
         ¥{{ page.price_fmt }}
         <small>参考価格・税込</small>
       </div>
+      {% endif %}
 
       <button
         class="btn btn--primary product-detail__add"
@@ -94,6 +102,7 @@ layout: default
         data-model="{{ page.model | escape }}"
         data-image="{{ page.image }}"
         data-price="{{ page.price }}"
+        {% if page.price == "2000" %}data-inquiry="true"{% endif %}
       >見積もりに追加</button>
 
       {% if page.catalog_pdfs and page.catalog_pdfs.size > 0 %}
