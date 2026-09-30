@@ -82,7 +82,8 @@
           model: btn.dataset.model,
           image: btn.dataset.image,
           price: Number(btn.dataset.price) || 0,
-          qty: 1
+          qty: 1,
+          inquiry: btn.dataset.inquiry === "true"
         };
         items.push(addedItem);
       } else {
@@ -192,6 +193,9 @@
     var row = document.createElement("div");
     row.className = "quote-row";
     row.dataset.id = item.id;
+    var priceHtml = item.inquiry
+      ? '<span class="quote-row__price quote-row__price--inquiry">ご案内</span>'
+      : '<span class="quote-row__price mono">' + yen(item.price * (item.qty || 1)) + '</span>';
     row.innerHTML =
       '<span class="quote-row__photo"><img src="' + item.image + '" alt=""></span>' +
       '<span class="quote-row__info">' +
@@ -202,7 +206,7 @@
         '<input type="number" min="1" value="' + (item.qty || 1) + '" aria-label="数量">' +
       '</span>' +
       '<span class="quote-row__price-col">' +
-        '<span class="quote-row__price mono">' + yen(item.price * (item.qty || 1)) + '</span>' +
+        priceHtml +
         '<button type="button" class="quote-row__remove">削除</button>' +
       '</span>';
     return row;
@@ -215,6 +219,7 @@
     var emptyEl = document.getElementById("quote-empty");
     var formWrap = document.getElementById("quote-form-wrap");
     var totalEl = document.getElementById("quote-total");
+    var inquiryNoteEl = document.getElementById("quote-inquiry-note");
 
     function render() {
       var items = getQuoteItems();
@@ -230,11 +235,17 @@
       formWrap.hidden = false;
 
       var total = 0;
+      var hasInquiry = false;
       items.forEach(function (item) {
-        total += item.price * (item.qty || 1);
+        if (item.inquiry) {
+          hasInquiry = true;
+        } else {
+          total += item.price * (item.qty || 1);
+        }
         listEl.appendChild(renderQuoteRow(item));
       });
       totalEl.textContent = yen(total);
+      if (inquiryNoteEl) inquiryNoteEl.hidden = !hasInquiry;
     }
 
     listEl.addEventListener("click", function (e) {
@@ -267,16 +278,28 @@
 
         var lines = [];
         var total = 0;
+        var hasInquiry = false;
         items.forEach(function (item) {
-          var lineTotal = item.price * (item.qty || 1);
-          total += lineTotal;
-          lines.push(
-            "・" + item.name + "（型番:" + item.model + "） 数量" + (item.qty || 1) +
-            " 参考価格" + yen(item.price) + " 小計" + yen(lineTotal)
-          );
+          if (item.inquiry) {
+            hasInquiry = true;
+            lines.push(
+              "・" + item.name + "（型番:" + item.model + "） 数量" + (item.qty || 1) +
+              " 参考価格ご案内 小計ご案内"
+            );
+          } else {
+            var lineTotal = item.price * (item.qty || 1);
+            total += lineTotal;
+            lines.push(
+              "・" + item.name + "（型番:" + item.model + "） 数量" + (item.qty || 1) +
+              " 参考価格" + yen(item.price) + " 小計" + yen(lineTotal)
+            );
+          }
         });
         lines.push("");
         lines.push("参考合計（税込）：" + yen(total));
+        if (hasInquiry) {
+          lines.push("※価格ご案内の商品は合計に含まれておらず、担当者より別途ご案内します");
+        }
 
         itemsField.value = lines.join("\n");
       });

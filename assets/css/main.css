@@ -478,6 +478,13 @@ input:focus-visible {
 .plate__price { font-family: var(--font-mono); font-weight: 700; font-size: 1.02rem; }
 .plate__price small { font-family: var(--font-body); font-weight: 400; font-size: 0.68rem; color: var(--steel); display: block; }
 
+.plate__price--inquiry {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--safety-deep);
+}
+
 .add-btn {
   font-family: var(--font-body);
   font-size: 0.78rem;
@@ -697,6 +704,10 @@ input:focus-visible {
 }
 
 .quote-row__price { font-family: var(--font-mono); font-weight: 700; text-align: right; white-space: nowrap; }
+.quote-row__price--inquiry {
+  font-family: var(--font-body);
+  color: var(--safety-deep);
+}
 .quote-row__remove {
   background: none;
   border: none;
@@ -737,6 +748,17 @@ input:focus-visible {
 }
 .quote-form h2 { font-size: 1.1rem; }
 .quote-form__note { font-size: 0.8rem; color: var(--steel); margin: 10px 0 18px; }
+
+.quote-inquiry-note {
+  background: #FDF0E7;
+  border: 1px solid var(--safety);
+  color: var(--safety-deep);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+.quote-inquiry-note[hidden] { display: none; }
 
 .quote-total {
   display: flex;

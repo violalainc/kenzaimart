@@ -11,10 +11,14 @@
   <h3 class="plate__name"><a href="{{ product_url }}">{{ include.product.name }}</a></h3>
   <p class="plate__model mono">型番 {{ include.product.model }}</p>
   <div class="plate__foot">
+    {% if include.product.price == "2000" %}
+    <div class="plate__price plate__price--inquiry">価格はお見積もり時にご案内</div>
+    {% else %}
     <div class="plate__price mono">
       ¥{{ include.product.price_fmt }}
       <small>参考価格・税込</small>
     </div>
+    {% endif %}
     <button
       class="add-btn"
       type="button"
@@ -24,6 +28,7 @@
       data-model="{{ include.product.model | escape }}"
       data-image="{{ include.product.image }}"
       data-price="{{ include.product.price }}"
+      {% if include.product.price == "2000" %}data-inquiry="true"{% endif %}
     >見積もりに追加</button>
   </div>
 </article>
